@@ -1,3 +1,7 @@
 .boot-card{
   height: 400px;;
 }
+
+.boot-card-img{
+  object-fit: contain;
+}
