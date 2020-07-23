@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header.jsx';
-import ProductListItem from './product-list-item.jsx';
+import ProductList from './product-list.jsx';
 
 export default class App extends React.Component {
 
@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <>
         <Header/>
-        <ProductListItem/>
+        <ProductList/>
       </>
     );
   }

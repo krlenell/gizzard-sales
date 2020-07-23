@@ -2,13 +2,21 @@ import React from 'react';
 
 export default class ProductListItem extends React.Component {
 
+  parsePrice(cost) {
+    let returnPrice = cost.toString(10);
+    const length = returnPrice.length;
+    returnPrice = '$' + returnPrice.substring(0, length - 2) + '.' + returnPrice.substring(length - 2, length);
+    return returnPrice;
+  }
+
   render() {
     return (
       <div className="card boot-card">
-        <img src="../../server/public/images/ostrich-pillow.jpg" alt="ostrichPillow"/>
+        <img className="card-img-top" src={this.props.product.image} height="200px" alt="ostrichPillow"/>
         <div className="card-body">
-          <h5 className="card-title">Ostrich Pillow</h5>
-          <p className="card-text">Info about ostrich Pillow</p>
+          <h5 className="card-title">{this.props.product.name}</h5>
+          <p className="card-text">{this.parsePrice(this.props.product.price)}</p>
+          <p className="card-text">{this.props.product.shortDescription}</p>
         </div>
       </div>
     );
