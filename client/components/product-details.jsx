@@ -3,6 +3,7 @@ import React from 'react';
 export default class ProductDetails extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       product: null
     };
@@ -13,7 +14,7 @@ export default class ProductDetails extends React.Component {
   }
 
   getProduct() {
-    fetch('/api/products/1', {
+    fetch(`/api/products/${this.props.params}`, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -22,7 +23,7 @@ export default class ProductDetails extends React.Component {
       .then(data => {
         this.setState({
           product: data
-        }, () => console.log(this.state));
+        });
       });
   }
 
@@ -31,6 +32,12 @@ export default class ProductDetails extends React.Component {
     const length = returnPrice.length;
     returnPrice = '$' + returnPrice.substring(0, length - 2) + '.' + returnPrice.substring(length - 2, length);
     return returnPrice;
+  }
+
+  handleClick(event) {
+    if (event.target.id === 'details-back') {
+      this.props.setView('catalog', {});
+    }
   }
 
   parseParagraphs(string) {
@@ -46,8 +53,8 @@ export default class ProductDetails extends React.Component {
       return null;
     }
     return (
-      <div className="card m-5">
-        <p className="back-button text-muted m-2">&lt; Back to catalog</p>
+      <div className="card m-5" onClick={this.handleClick}>
+        <p id="details-back" className="back-button text-muted m-2">&lt; Back to catalog</p>
         <div className="product-head d-flex">
           <img src={this.state.product.image} height="300px" alt="shake-weight.jpg"/>
           <div>

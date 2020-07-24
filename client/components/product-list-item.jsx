@@ -15,7 +15,7 @@ export default class ProductListItem extends React.Component {
 
   handleClick(event) {
     const productId = this.props.product.productId;
-    this.props.getClickedId(event, productId);
+    this.props.getDisplay(event, productId);
   }
 
   render() {
