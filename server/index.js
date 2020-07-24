@@ -69,6 +69,14 @@ app.get('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/cart', (req, res, next) => {
+  const productId = parseInt(req.body.productId, 10);
+  if (!productId) {
+    next(new ClientError(`productId ${req.body.productId} is not a valid input`, 400));
+    // return
+  }
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
