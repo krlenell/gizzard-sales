@@ -1,7 +1,12 @@
 .boot-card{
-  height: 400px;;
+  height: 400px;
+  cursor: pointer;
 }
 
 .boot-card-img{
   object-fit: contain;
+}
+
+.back-button{
+  cursor: pointer;
 }
