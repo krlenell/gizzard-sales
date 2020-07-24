@@ -4,6 +4,7 @@ import ProductListItem from './product-list-item.jsx';
 export default class ProductList extends React.Component {
   constructor(props) {
     super(props);
+    this.getClickedId = this.getClickedId.bind(this);
     this.state = {
       products: []
     };
@@ -23,6 +24,12 @@ export default class ProductList extends React.Component {
       });
   }
 
+  getClickedId(event, productId) {
+    console.log('list getClickedId event', event.target);
+    console.log('list props', productId);
+    this.props.setView('details', productId);
+  }
+
   componentDidMount() {
     this.getProducts();
   }
@@ -30,7 +37,7 @@ export default class ProductList extends React.Component {
   render() {
     const productItems = this.state.products.map(product => (
       <div className="col-4" key={product.productId}>
-        <ProductListItem product={product}/>
+        <ProductListItem getClickedId={this.getClickedId} product={product}/>
       </div>
     ));
     return (

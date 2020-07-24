@@ -35,11 +35,9 @@ export default class ProductDetails extends React.Component {
 
   parseParagraphs(string) {
     const words = string.split('\\n');
-    console.log(words);
     const paragraphs = words.map((paragraph, index) => {
       return <p key={index}>{paragraph}</p>;
     });
-    console.log(paragraphs);
     return paragraphs;
   }
 
