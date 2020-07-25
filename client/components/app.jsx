@@ -44,6 +44,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    const cartCount = this.state.cart.length;
     let view;
     if (this.state.view.name === 'details') {
       view = <ProductDetails setView={this.setView} params={this.state.view.params}/>;
@@ -52,7 +53,7 @@ export default class App extends React.Component {
     }
     return (
       <>
-        <Header/>
+        <Header cartCount={cartCount}/>
         {view}
       </>
     );
