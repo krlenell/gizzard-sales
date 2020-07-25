@@ -2,12 +2,12 @@ import React from 'react';
 import Header from './header.jsx';
 import ProductList from './product-list.jsx';
 import ProductDetails from './product-details.jsx';
-import { response } from 'express';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.setView = this.setView.bind(this);
+    this.addToCart = this.addToCart.bind(this);
     this.state = {
       view: {
         name: 'catalog',
@@ -45,16 +45,17 @@ export default class App extends React.Component {
   }
 
   addToCart(product) {
+    const cart = this.state.cart.concat();
     fetch('/api/cart/', {
-      header: {
+      headers: {
         'Content-type': 'application/json'
       },
       method: 'POST',
       body: JSON.stringify(product)
     })
-      .then(respone => response.json())
+      .then(response => response.json())
       .then(data => {
-        const cart = this.state.cart.concat(data);
+        cart.push(data);
         this.setState({
           cart: cart
         });
@@ -65,7 +66,7 @@ export default class App extends React.Component {
     const cartCount = this.state.cart.length;
     let view;
     if (this.state.view.name === 'details') {
-      view = <ProductDetails setView={this.setView} params={this.state.view.params}/>;
+      view = <ProductDetails addToCart={this.addToCart} setView={this.setView} params={this.state.view.params}/>;
     } else if (this.state.view.name === 'catalog') {
       view = <ProductList setView={this.setView} />;
     }
