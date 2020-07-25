@@ -10,3 +10,12 @@
 .back-button{
   cursor: pointer;
 }
+
+.cart-card{
+
+}
+
+.cart-img{
+  width: 200px;
+  object-fit: contain;
+}
