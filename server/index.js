@@ -100,8 +100,7 @@ app.post('/api/cart', (req, res, next) => {
   db.query(sql, params)
     .then(result => {
       if (!result.rows[0]) {
-        next(new ClientError(`productId ${productId} doesn't exist`), 400);
-        return;
+        throw new ClientError(`productId ${productId} doesn't exist`, 400);
       }
       const price = result.rows[0].price;
       if (req.session.cartId) {
@@ -147,7 +146,7 @@ app.post('/api/cart', (req, res, next) => {
       where "c"."cartItemId" = $1
       `;
       const params = [result.cartItemId];
-      db.query(sql, params).then(nextResult => {
+      return db.query(sql, params).then(nextResult => {
         res.status(201).json(nextResult.rows[0]);
       });
     })
