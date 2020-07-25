@@ -37,6 +37,8 @@ export default class ProductDetails extends React.Component {
   handleClick(event) {
     if (event.target.id === 'details-back') {
       this.props.setView('catalog', {});
+    } else if (event.target.id === 'add-to-cart') {
+      this.props.addToCart(this.state.product);
     }
   }
 
@@ -61,6 +63,7 @@ export default class ProductDetails extends React.Component {
             <h1 className="card-title">{this.state.product.name}</h1>
             <h3 className="card-subtitle text-muted">{this.parsePrice(this.state.product.price)}</h3>
             <p className="card-text">{this.state.product.shortDescription}</p>
+            <button id="add-to-cart" className="btn btn-primary">Add To Cart</button>
           </div>
         </div>
         <div className="card-text m-2">{this.parseParagraphs(this.state.product.longDescription)}</div>
