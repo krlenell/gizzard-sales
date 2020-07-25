@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header.jsx';
 import ProductList from './product-list.jsx';
 import ProductDetails from './product-details.jsx';
+import { response } from 'express';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -41,6 +42,23 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
+  }
+
+  addToCart(product) {
+    fetch('/api/cart/', {
+      header: {
+        'Content-type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(product)
+    })
+      .then(respone => response.json())
+      .then(data => {
+        const cart = this.state.cart.concat(data);
+        this.setState({
+          cart: cart
+        });
+      });
   }
 
   render() {
