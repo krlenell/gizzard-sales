@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './header.jsx';
 import ProductList from './product-list.jsx';
 import ProductDetails from './product-details.jsx';
-import CartSummaryItem from './cart-summary-item.jsx';
+import CartSummary from './cart-summary.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -79,8 +79,9 @@ export default class App extends React.Component {
   //   );
   // }
   render() {
+    console.log('cart', this.state.cart);
     return (
-      <CartSummaryItem/>
+      <CartSummary setView={this.setView} cart={this.state.cart}/>
     );
   }
 

@@ -15,6 +15,10 @@
 
 }
 
+.cart-back{
+  cursor: pointer;
+}
+
 .cart-img{
   width: 200px;
   object-fit: contain;
