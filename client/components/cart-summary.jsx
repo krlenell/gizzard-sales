@@ -9,16 +9,21 @@ export default class CartSummary extends React.Component {
 
   handleClick(event) {
     if (event.target.id === 'cart-back') {
-      console.log('clicked cart back');
-      this.props.setView('cart', {});
+      this.props.setView('catalog', {});
     }
+  }
+
+  parsePrice(cost) {
+    let returnPrice = cost.toString(10);
+    const length = returnPrice.length;
+    returnPrice = '$' + returnPrice.substring(0, length - 2) + '.' + returnPrice.substring(length - 2, length);
+    return returnPrice;
   }
 
   render() {
     let totalPrice = 0;
     let cartList;
     const cart = this.props.cart;
-    console.log('cart', cart);
     if (!cart.length) {
       cartList = <h1>No Items in Cart.</h1>;
     } else {
@@ -30,11 +35,11 @@ export default class CartSummary extends React.Component {
     return (
       <div onClick={this.handleClick} className="ml-5">
         <div>
-          <p id="cart-back" className="cart-back text-muted">&lt; Back to Catalog</p>
+          <p id="cart-back" className="c-pointer text-muted">&lt; Back to Catalog</p>
           <h2>My Cart</h2>
         </div>
         {cartList}
-        <p>Total Price: {totalPrice}</p>
+        <p>Total Price: {this.parsePrice(totalPrice)}</p>
       </div>
     );
   }

@@ -7,15 +7,7 @@
   object-fit: contain;
 }
 
-.back-button{
-  cursor: pointer;
-}
-
-.cart-card{
-
-}
-
-.cart-back{
+.c-pointer{
   cursor: pointer;
 }
 

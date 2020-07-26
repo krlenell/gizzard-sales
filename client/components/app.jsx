@@ -11,7 +11,7 @@ export default class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.state = {
       view: {
-        name: 'cart',
+        name: 'catalog',
         params: {}
       },
       cart: []
@@ -76,7 +76,7 @@ export default class App extends React.Component {
     }
     return (
       <>
-        <Header cartCount={cartCount}/>
+        <Header setView={this.setView} cartCount={cartCount}/>
         {view}
       </>
     );

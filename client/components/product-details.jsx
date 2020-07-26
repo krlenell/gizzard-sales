@@ -56,7 +56,7 @@ export default class ProductDetails extends React.Component {
     }
     return (
       <div className="card m-5" onClick={this.handleClick}>
-        <p id="details-back" className="back-button text-muted m-2">&lt; Back to catalog</p>
+        <p id="details-back" className="c-pointer text-muted m-2">&lt; Back to catalog</p>
         <div className="product-head d-flex">
           <img src={this.state.product.image} height="300px" alt="shake-weight.jpg"/>
           <div>
