@@ -9,27 +9,32 @@ export default class CartSummary extends React.Component {
 
   handleClick(event) {
     if (event.target.id === 'cart-back') {
-      console.log('Clicked cart back');
+      console.log('clicked cart back');
+      this.props.setView('cart', {});
     }
   }
 
   render() {
-    const cart = this.props.cart;
+    let totalPrice = 0;
     let cartList;
+    const cart = this.props.cart;
+    console.log('cart', cart);
     if (!cart.length) {
-      cartList = <h1 className="ml-5">No Items in Cart.</h1>;
+      cartList = <h1>No Items in Cart.</h1>;
     } else {
       cartList = cart.map(cartItem => {
-        return <CartSummaryItem item={cartItem} key={cartItem.productId}/>;
+        totalPrice += cartItem.price;
+        return <CartSummaryItem item={cartItem} key={cartItem.cartItemId}/>;
       });
     }
     return (
-      <div onClick={this.handleClick}>
-        <div className="ml-5">
+      <div onClick={this.handleClick} className="ml-5">
+        <div>
           <p id="cart-back" className="cart-back text-muted">&lt; Back to Catalog</p>
           <h2>My Cart</h2>
         </div>
         {cartList}
+        <p>Total Price: {totalPrice}</p>
       </div>
     );
   }

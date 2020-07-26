@@ -11,7 +11,7 @@ export default class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'cart',
         params: {}
       },
       cart: []
@@ -63,26 +63,22 @@ export default class App extends React.Component {
       });
   }
 
-  // render() {
-  //   const cartCount = this.state.cart.length;
-  //   let view;
-  //   if (this.state.view.name === 'details') {
-  //     view = <ProductDetails addToCart={this.addToCart} setView={this.setView} params={this.state.view.params}/>;
-  //   } else if (this.state.view.name === 'catalog') {
-  //     view = <ProductList setView={this.setView} />;
-  //   }
-  //   return (
-  //     <>
-  //       <Header cartCount={cartCount}/>
-  //       {view}
-  //     </>
-  //   );
-  // }
   render() {
-    console.log('cart', this.state.cart);
+    const cartCount = this.state.cart.length;
+    let view;
+
+    if (this.state.view.name === 'details') {
+      view = <ProductDetails addToCart={this.addToCart} setView={this.setView} params={this.state.view.params}/>;
+    } else if (this.state.view.name === 'catalog') {
+      view = <ProductList setView={this.setView} />;
+    } else if (this.state.view.name === 'cart') {
+      view = <CartSummary setView={this.setView} cart={this.state.cart} />;
+    }
     return (
-      <CartSummary setView={this.setView} cart={this.state.cart}/>
+      <>
+        <Header cartCount={cartCount}/>
+        {view}
+      </>
     );
   }
-
 }
