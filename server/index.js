@@ -153,6 +153,26 @@ app.post('/api/cart', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.post('/api/orders', (req, res, next) => {
+  console.log(req.session);
+  if (!req.session.cartId) {
+    next(new ClientError('There is no cart for this session', 400));
+    return;
+  }
+  switch (false) {
+    case ('name' in req.body):
+      next(new ClientError('Name is not supplied', 400));
+      break;
+    case ('creditCard' in req.body):
+      next(new ClientError('Credit Card is required', 400));
+      break;
+    case ('shippingAddress' in req.body):
+      next(new ClientError('Shipping address is required', 400));
+      break;
+    default:
+  }
+});
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
