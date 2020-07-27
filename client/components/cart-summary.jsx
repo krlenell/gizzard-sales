@@ -33,13 +33,13 @@ export default class CartSummary extends React.Component {
       });
     }
     return (
-      <div onClick={this.handleClick} className="ml-5">
+      <div onClick={this.handleClick} className="row flex-column mt-5">
         <div>
           <p id="cart-back" className="c-pointer text-muted">&lt; Back to Catalog</p>
           <h2>My Cart</h2>
         </div>
         {cartList}
-        <p>Total Price: {this.parsePrice(totalPrice)}</p>
+        <h5>Item Total {this.parsePrice(totalPrice)}</h5>
       </div>
     );
   }
