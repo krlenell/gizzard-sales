@@ -20,7 +20,18 @@ export default class CheckoutForm extends React.Component {
   }
 
   handleSubmit(e) {
-
+    e.preventDefault();
+    const newOrder = {
+      name: this.state.name,
+      creditCard: parseInt(this.state.creditCard, 10),
+      shippingAddress: this.state.shippingAddress
+    };
+    this.props.placeOrder(newOrder);
+    this.setState({
+      name: '',
+      creditCard: '',
+      shippingAddress: ''
+    });
   }
 
   handleClick(e) {
@@ -46,20 +57,20 @@ export default class CheckoutForm extends React.Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="credit">Credit Card</label>
+            <label htmlFor="creditCard">Credit Card</label>
             <input
               type="text"
               className="form-control"
-              id="credit"
+              id="creditCard"
               onChange={this.handleChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="address">Shipping Address</label>
+            <label htmlFor="shippingAddress">Shipping Address</label>
             <textarea
               rows="3"
               className="form-control"
-              id="address"
+              id="shippingAddress"
               onChange={this.handleChange}
             />
           </div>

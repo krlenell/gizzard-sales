@@ -66,7 +66,7 @@ export default class App extends React.Component {
   }
 
   placeOrder(order) {
-    fetch('/api/cart/', {
+    fetch('/api/orders/', {
       headers: {
         'Content-type': 'application/json'
       },
@@ -99,7 +99,10 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'cart') {
       view = <CartSummary setView={this.setView} cart={this.state.cart} />;
     } else if (this.state.view.name === 'checkout') {
-      view = <CheckoutForm setView={this.setView} placeOrder={this.placeOrder}/>;
+      view = <CheckoutForm
+        setView={this.setView}
+        placeOrder={this.placeOrder}
+      />;
     }
     return (
       <>
