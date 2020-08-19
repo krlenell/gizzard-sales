@@ -35,7 +35,9 @@ export default class CartSummary extends React.Component {
     return (
       <div onClick={this.handleClick} className="row flex-column mt-5">
         <div>
-          <p id="cart-back" className="c-pointer text-muted">&lt; Back to Catalog</p>
+          <p id="cart-back" className="c-pointer text-muted">
+            &lt; Back to Catalog
+          </p>
           <h2>My Cart</h2>
         </div>
         {cartList}
