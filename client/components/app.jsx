@@ -14,7 +14,7 @@ export default class App extends React.Component {
     this.getTotalPrice = this.getTotalPrice.bind(this);
     this.state = {
       view: {
-        name: 'checkout',
+        name: 'catalog',
         params: {}
       },
       cart: [],
@@ -46,11 +46,6 @@ export default class App extends React.Component {
   }
 
   getTotalPrice(total) {
-    if (total === 'reset') {
-      this.setState({
-        totalPrice: 0
-      });
-    }
     if (Number.isInteger(total)) {
       this.setState({
         totalPrice: total
