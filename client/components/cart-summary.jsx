@@ -11,6 +11,10 @@ export default class CartSummary extends React.Component {
     if (event.target.id === 'cart-back') {
       this.props.setView('catalog', {});
     }
+    if (event.target.id === 'checkout') {
+      this.props.setView('checkout', {});
+    }
+
   }
 
   parsePrice(cost) {
@@ -41,7 +45,10 @@ export default class CartSummary extends React.Component {
           <h2>My Cart</h2>
         </div>
         {cartList}
-        <h5>Item Total {this.parsePrice(totalPrice)}</h5>
+        <div className="d-flex justify-content-between mt-2 mb-5">
+          <h5>Item Total {this.parsePrice(totalPrice)}</h5>
+          <button id="checkout" className="btn btn-primary">Checkout </button>
+        </div>
       </div>
     );
   }

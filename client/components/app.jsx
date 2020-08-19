@@ -13,7 +13,7 @@ export default class App extends React.Component {
     this.placeOrder = this.placeOrder.bind(this);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'checkout',
         params: {}
       },
       cart: []
@@ -99,7 +99,7 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'cart') {
       view = <CartSummary setView={this.setView} cart={this.state.cart} />;
     } else if (this.state.view.name === 'checkout') {
-      view = <CheckoutForm/>;
+      view = <CheckoutForm setView={this.setView} placeOrder={this.placeOrder}/>;
     }
     return (
       <>
