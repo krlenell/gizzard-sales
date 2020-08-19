@@ -11,12 +11,14 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
+    this.getTotalPrice = this.getTotalPrice.bind(this);
     this.state = {
       view: {
         name: 'checkout',
         params: {}
       },
-      cart: []
+      cart: [],
+      totalPrice: 0
     };
   }
 
@@ -41,6 +43,19 @@ export default class App extends React.Component {
           cart: data
         });
       });
+  }
+
+  getTotalPrice(total) {
+    if (total === 'reset') {
+      this.setState({
+        totalPrice: 0
+      });
+    }
+    if (Number.isInteger(total)) {
+      this.setState({
+        totalPrice: total
+      });
+    }
   }
 
   componentDidMount() {
@@ -97,11 +112,17 @@ export default class App extends React.Component {
     } else if (this.state.view.name === 'catalog') {
       view = <ProductList setView={this.setView} />;
     } else if (this.state.view.name === 'cart') {
-      view = <CartSummary setView={this.setView} cart={this.state.cart} />;
+      view = <CartSummary
+        setView={this.setView}
+        cart={this.state.cart}
+        getTotalPrice={this.getTotalPrice}
+      />;
     } else if (this.state.view.name === 'checkout') {
       view = <CheckoutForm
         setView={this.setView}
         placeOrder={this.placeOrder}
+        totalPrice = {this.state.totalPrice}
+        getTotalPrice = {this.state.getTotalPrice}
       />;
     }
     return (

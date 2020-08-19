@@ -14,7 +14,6 @@ export default class CartSummary extends React.Component {
     if (event.target.id === 'checkout') {
       this.props.setView('checkout', {});
     }
-
   }
 
   parsePrice(cost) {
@@ -22,6 +21,10 @@ export default class CartSummary extends React.Component {
     const length = returnPrice.length;
     returnPrice = '$' + returnPrice.substring(0, length - 2) + '.' + returnPrice.substring(length - 2, length);
     return returnPrice;
+  }
+
+  componentDidMount() {
+    this.props.getTotalPrice(this.totalPrice);
   }
 
   render() {
@@ -36,6 +39,7 @@ export default class CartSummary extends React.Component {
         return <CartSummaryItem item={cartItem} key={cartItem.cartItemId}/>;
       });
     }
+    this.totalPrice = totalPrice;
     return (
       <div onClick={this.handleClick} className="row flex-column mt-5">
         <div>

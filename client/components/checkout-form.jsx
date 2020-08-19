@@ -34,6 +34,13 @@ export default class CheckoutForm extends React.Component {
     });
   }
 
+  parsePrice(cost) {
+    let returnPrice = cost.toString(10);
+    const length = returnPrice.length;
+    returnPrice = '$' + returnPrice.substring(0, length - 2) + '.' + returnPrice.substring(length - 2, length);
+    return returnPrice;
+  }
+
   handleClick(e) {
     if (e.currentTarget.id === 'back-button') {
       this.props.setView('catalog', {});
@@ -45,7 +52,9 @@ export default class CheckoutForm extends React.Component {
     return (
       <div className="mt-4 d-flex flex-column justify-content-between">
         <h1 >My Cart</h1>
-        <h6 className="text-muted">Order Total: PlaceHolder</h6>
+        <h6 className="text-muted">
+          {`Order Total: ${this.parsePrice(this.props.totalPrice)}`}
+        </h6>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
