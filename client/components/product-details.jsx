@@ -56,17 +56,29 @@ export default class ProductDetails extends React.Component {
     }
     return (
       <div className="card m-5" onClick={this.handleClick}>
-        <p id="details-back" className="c-pointer text-muted m-2">&lt; Back to catalog</p>
+        <p id="details-back" className="c-pointer text-muted m-2">
+          &lt; Back to catalog
+        </p>
         <div className="product-head d-flex">
           <img src={this.state.product.image} height="300px" alt="shake-weight.jpg"/>
           <div>
-            <h1 className="card-title">{this.state.product.name}</h1>
-            <h3 className="card-subtitle text-muted">{this.parsePrice(this.state.product.price)}</h3>
-            <p className="card-text">{this.state.product.shortDescription}</p>
-            <button id="add-to-cart" className="btn btn-primary">Add To Cart</button>
+            <h1 className="card-title">
+              {this.state.product.name}
+            </h1>
+            <h3 className="card-subtitle text-muted">
+              {this.parsePrice(this.state.product.price)}
+            </h3>
+            <p className="card-text">
+              {this.state.product.shortDescription}
+            </p>
+            <button id="add-to-cart" className="btn btn-primary">
+              Add To Cart
+            </button>
           </div>
         </div>
-        <div className="card-text m-2">{this.parseParagraphs(this.state.product.longDescription)}</div>
+        <div className="card-text m-2">
+          {this.parseParagraphs(this.state.product.longDescription)}
+        </div>
       </div>
     );
   }
