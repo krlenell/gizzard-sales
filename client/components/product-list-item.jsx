@@ -21,10 +21,17 @@ export default class ProductListItem extends React.Component {
   render() {
     return (
       <div className="card boot-card m-2 " onClick={this.handleClick}>
-        <img className="card-img-top boot-card-img" src={this.props.product.image} height="200px" alt="ostrichPillow"/>
+        <img
+          className="card-img-top boot-card-img"
+          src={this.props.product.image}
+          height="200px"
+          alt="ostrichPillow"
+        />
         <div className="card-body">
           <h5 className="card-title">{this.props.product.name}</h5>
-          <p className="card-text">{this.parsePrice(this.props.product.price)}</p>
+          <p className="card-text">
+            {this.parsePrice(this.props.product.price)}
+          </p>
           <p className="card-text">{this.props.product.shortDescription}</p>
         </div>
       </div>
