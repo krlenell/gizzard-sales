@@ -19,8 +19,8 @@ export default class Header extends React.Component {
     return (
       <header onClick={this.handleClick} className="navbar bg-dark navbar-dark">
         <span id="logo" className="c-pointer navbar-brand ml-5">
+          Gizzard Sale
           <i className="fas fa-dollar-sign mr-1"></i>
-          Wicked Sales
         </span>
         <span id="header-cart" className="c-pointer navbar-brand mr-5">
           {this.props.cartCount} Items <i className="fas fa-shopping-cart"></i>
