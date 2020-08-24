@@ -16,7 +16,7 @@ export default class App extends React.Component {
     this.clearPopUp = this.clearPopUp.bind(this);
     this.state = {
       view: {
-        name: 'catalog',
+        name: 'cart',
         params: {}
       },
       cart: [],
@@ -99,7 +99,7 @@ export default class App extends React.Component {
         this.setState({
           cart: [],
           view: {
-            name: 'catalog',
+            name: 'cart',
             params: {}
           }
         });

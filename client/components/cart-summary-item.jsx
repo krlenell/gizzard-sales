@@ -11,9 +11,15 @@ export default class CartSummaryItem extends React.Component {
 
   render() {
     return (
-      <div className="cart-card col-12  mt-1 mb-1 card flex-row">
-        <img className="cart-img m-2" src={this.props.item.image} alt="wax-vac"/>
-        <div className="card-body m-4">
+      <div className="cart-card col-12 mt-1 mb-1 card flex-lg-row flex-column">
+        <img
+          height="300px"
+          className="m-2"
+          style={{ objectFit: 'contain' }}
+          src={this.props.item.image}
+          alt={this.props.item.name}
+        />
+        <div className="card-body m-lg-4">
           <h2 className="cart-title">{this.props.item.name}</h2>
           <h3 className="card-text text-muted">
             {this.parsePrice(this.props.item.price)}
