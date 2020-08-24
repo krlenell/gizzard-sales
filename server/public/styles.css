@@ -1,12 +1,3 @@
-.boot-card{
-  min-height: 30vh;
-  cursor: pointer;
-}
-
-.boot-card-img{
-  object-fit: contain;
-}
-
 .c-pointer{
   cursor: pointer;
 }
