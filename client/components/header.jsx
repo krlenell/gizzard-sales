@@ -10,12 +10,15 @@ export default class Header extends React.Component {
     if (event.target.id === 'header-cart') {
       this.props.setView('cart', {});
     }
+    if (event.target.id === 'logo') {
+      this.props.setView('catalog', {});
+    }
   }
 
   render() {
     return (
       <header onClick={this.handleClick} className="navbar bg-dark navbar-dark">
-        <span className="navbar-brand ml-5">
+        <span id="logo" className="c-pointer navbar-brand ml-5">
           <i className="fas fa-dollar-sign mr-1"></i>
           Wicked Sales
         </span>
