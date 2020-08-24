@@ -11,7 +11,7 @@ export default class CartSummaryItem extends React.Component {
 
   render() {
     return (
-      <div className="cart-card col-12 mt-1 mb-1 card flex-lg-row flex-column">
+      <div className="cart-card col-12 m-2 card flex-lg-row flex-column">
         <img
           height="300px"
           className="m-2"
