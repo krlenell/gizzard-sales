@@ -17,7 +17,7 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header onClick={this.handleClick} className="navbar bg-dark navbar-dark">
+      <header onClick={this.handleClick} className="navbar sticky-top bg-dark navbar-dark">
         <span id="logo" className="c-pointer navbar-brand ml-lg-5 ml-md-3">
           Gizzard Sale
           <i className="fas fa-dollar-sign mr-1"></i>
