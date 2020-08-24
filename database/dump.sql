@@ -250,6 +250,25 @@ COPY public."cartItems" ("cartItemId", "cartId", "productId", price) FROM stdin;
 19	21	4	999
 20	22	1	2999
 21	22	3	2900
+22	22	1	2999
+55	23	2	2595
+56	23	1	2999
+57	24	1	2999
+58	23	1	2999
+59	23	2	2595
+60	23	1	2999
+61	23	1	2999
+62	25	1	2999
+63	26	3	2900
+64	27	3	2900
+65	28	1	2999
+66	28	2	2595
+67	28	5	9900
+68	29	1	2999
+69	30	1	2999
+70	31	1	2999
+71	31	2	2595
+72	31	2	2595
 \.
 
 
@@ -280,6 +299,15 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 20	2020-07-25 17:24:29.44093-07
 21	2020-07-25 21:06:50.709922-07
 22	2020-07-26 21:03:35.710485-07
+23	2020-08-18 16:18:20.301677-07
+24	2020-08-18 16:23:53.34812-07
+25	2020-08-18 16:49:03.275906-07
+26	2020-08-18 16:53:07.149367-07
+27	2020-08-18 16:56:26.466825-07
+28	2020-08-18 19:53:10.574533-07
+29	2020-08-18 20:36:22.745256-07
+30	2020-08-18 20:38:35.457391-07
+31	2020-08-23 18:35:46.892551-07
 \.
 
 
@@ -288,6 +316,15 @@ COPY public.carts ("cartId", "createdAt") FROM stdin;
 --
 
 COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", "createdAt") FROM stdin;
+1	24	Jeff	123456	Delaware	2020-08-18 16:39:27.159517-07
+2	24	Jeff	123456	Delaware	2020-08-18 16:42:17.767858-07
+3	25	Jeff	123456	Delaware	2020-08-18 16:49:45.993708-07
+4	26	Jeff	123456	Delaware	2020-08-18 16:53:31.027583-07
+5	27	Jeff	123456	Delaware	2020-08-18 16:59:23.79729-07
+8	23	Kevin Lenell	0	420 blaze it aveneu	2020-08-18 19:38:01.191432-07
+9	28	Wee	12345	asjkl;df;a	2020-08-18 20:07:31.124756-07
+10	29	Julius	123456	wawa\n	2020-08-18 20:38:13.201507-07
+11	30	Kevin Lenell	0	Wooo	2020-08-18 20:38:46.947251-07
 \.
 
 
@@ -296,12 +333,21 @@ COPY public.orders ("orderId", "cartId", name, "creditCard", "shippingAddress", 
 --
 
 COPY public.products ("productId", name, price, image, "shortDescription", "longDescription") FROM stdin;
-1	Shake Weight	2999	/images/shake-weight.jpg	Dynamic Inertia technology ignites muscles in arms, shoulders, and chest.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-2	ShamWow	2595	/images/shamwow.jpg	It's like a chamois, towel, and sponge, all in one! Soaks up to 10x it's weight in any liquid!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-3	Snuggie	2900	/images/snuggie.jpg	Super-Soft Fleece with pockets! One Size fits all Adults! Keeps you Warm & Your Hands-Free!	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-4	Wax Vac	999	/images/wax-vac.jpg	Gentle way to remove ear wax. Safe and hygienic. Reduces the risk of painful infections.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-5	Ostrich Pillow	9900	/images/ostrich-pillow.jpg	Create your own snugly space in the world and feel-good anywhere with the ultimate cocoon pillow.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
-6	Tater Mitts	830	/images/tater-mitts.jpg	8 Seconds is all you need with Tater Mitts. Quickly and easily prepare all your favorite potato dishes with Tater Mitts.	Lorem ipsum dolor amet fashion axe pour-over jianbing, adaptogen waistcoat tacos master cleanse pitchfork next level. Thundercats pour-over chartreuse 90's. Master cleanse hot chicken ennui offal. Freegan slow-carb offal hell of. Umami polaroid wolf slow-carb next level. Gentrify cardigan seitan, kombucha tacos chambray roof party typewriter man braid. Tote bag lo-fi hell of chia fam hammock.\\nAesthetic photo booth la croix, vaporware leggings biodiesel man braid tumeric skateboard tousled slow-carb four dollar toast synth pabst pickled. Typewriter church-key chia slow-carb vice gochujang actually. Shoreditch austin woke hot chicken, single-origin coffee ugh affogato four loko green juice. Migas iPhone four dollar toast mustache.
+9	12 Bar Bruise	2999	/images/bruise.jpg	King Gizzard and the Lizard Wizard's Debut album.  Very garage-y and harsh	Long Description
+10	Eyes Like the Sky	2599	/images/eyes.jpg	The boys decided that their EP and debut were to garage and didn't want to be put into a category.  This album is like a old western radio drama with evil guitars in the background.	Long Description
+11	Float Along - Fill Your Lungs	2379	/images/float.jpg	Seems like a kind of transition into Radiohead vibes that they quickly left.  Standout tracks are "Let Me Mend the Past" and "God is Calling Me Back Home"	Long Description
+12	Oddments	2120	/images/oddments.jpg	The first 'B-side'.  A collection of songs that didn't make it to other albums.  Still mangages to maintain it's own identity of pop-y indie vibes	Long Description
+13	I'm in Your Mind Fuzz	3299	/images/mindfuzz.jpg	Considered the best entry album to get into Gizz.  Very wild opening with a mellow ending.  You get a taste of most of their more prominent vibes.	Long Description
+14	Quarters!	4040	/images/quarters.jpg	Four tracks, each 10:10 long.  Similar vibes to the latter half of mind-fuzz.  "God is in the Rhythm" is one of Gizz's best tracks	Long Description
+15	Paper Mâché Dream Balloon	3346	/images/papermache.jpg	A very chirpy and happy sounding album about a deranged serial killer.  Recorded on almost entirely acoustic instruments, you might not notice the haunting story at all.	Long Description
+16	Nonagon Infinity	9999	/images/nonagon.png	A nine track long album designed to be looped infinitely.  Certainly Gizz's wildest and most energetic effort yet.	Long Description
+17	Flying Microtonal Banana	3500	/images/microtonal.jpg	The boys created a microtonal guitar for this album.  Very haunting psychedelic sitar-esque sounds here.	Long Description
+18	Murder of the Universe	5000	/images/murder.jpg	3 albums in one.  A side very fast and narration heavy.  B side reminiscent of Nonagon.  C side is a total meme.	Long Description
+19	Sketches of Brunswick East	3720	/images/brunswick.jpg	A collaboration album with Mild High Club leads to a very groovy jazz fusion sound.	Long Description
+20	Polygonwanaland	4000	/images/polygon.jpg	The most fun album name to say.  Also the most archetypically psychedelic album.  Like a bad trip with a good afterglow	Long Description
+21	Gumboot Soup	4408	images/gumboot.jpg	The second of the B side albums.  This one is much more varied and you can really hear which album's recording sesh a song came from.	Long Description
+22	Fishing for Fishies	4156	images/fishies.png	A very pop-y sounding environmental jam protesting overfishing and plastics.	Long Description
+23	Infest the Rats Nest	3450	images/infest.jpg	Straight up thrash metal out of nowhere.  Tells the story of an environmental apocalypse and a group of astronauts trying to escape to the planet venus	Long Description
 \.
 
 
@@ -309,28 +355,28 @@ COPY public.products ("productId", name, price, image, "shortDescription", "long
 -- Name: cartItems_cartItemId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 21, true);
+SELECT pg_catalog.setval('public."cartItems_cartItemId_seq"', 72, true);
 
 
 --
 -- Name: carts_cartId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."carts_cartId_seq"', 22, true);
+SELECT pg_catalog.setval('public."carts_cartId_seq"', 31, true);
 
 
 --
 -- Name: orders_orderId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."orders_orderId_seq"', 1, false);
+SELECT pg_catalog.setval('public."orders_orderId_seq"', 11, true);
 
 
 --
 -- Name: products_productId_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public."products_productId_seq"', 1, false);
+SELECT pg_catalog.setval('public."products_productId_seq"', 23, true);
 
 
 --
