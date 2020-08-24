@@ -55,13 +55,18 @@ export default class ProductDetails extends React.Component {
       return null;
     }
     return (
-      <div className="card m-5" onClick={this.handleClick}>
+      <div className="card mt-2 m-lg-5" onClick={this.handleClick}>
         <p id="details-back" className="c-pointer text-muted m-2">
           &lt; Back to catalog
         </p>
-        <div className="product-head d-flex">
-          <img src={this.state.product.image} height="300px" alt="shake-weight.jpg"/>
-          <div>
+        <div className="d-flex flex-md-row flex-column">
+          <img
+            src={this.state.product.image}
+            height="300px"
+            style={{ objectFit: 'contain' }}
+            alt={this.state.product.name}
+          />
+          <div className="ml-lg-3 ml-1">
             <h1 className="card-title">
               {this.state.product.name}
             </h1>
@@ -76,8 +81,11 @@ export default class ProductDetails extends React.Component {
             </button>
           </div>
         </div>
-        <div className="card-text m-2">
-          {this.parseParagraphs(this.state.product.longDescription)}
+        <div className="m-2">
+          <h6 className="card-title">More Info:</h6>
+          <div className="card-text">
+            {this.parseParagraphs(this.state.product.longDescription)}
+          </div>
         </div>
       </div>
     );

@@ -44,8 +44,8 @@ export default class CartSummary extends React.Component {
     }
     this.totalPrice = totalPrice;
     return (
-      <div onClick={this.handleClick} className="row flex-column mt-5">
-        <div>
+      <div onClick={this.handleClick} className="row flex-column mt-2 mt-lg-5">
+        <div className="ml-3">
           <p id="cart-back" className="c-pointer text-muted">
             &lt; Back to Catalog
           </p>
@@ -53,7 +53,7 @@ export default class CartSummary extends React.Component {
         </div>
         {cartList}
         <div className={hiddenCart}>
-          <div className="d-flex justify-content-between mt-2 mb-5">
+          <div className="d-flex justify-content-between mt-2 mb-5 ml-3 mr-3">
             <h5>Item Total {this.parsePrice(totalPrice)}</h5>
             <button id="checkout" className="btn btn-primary">Checkout </button>
           </div>

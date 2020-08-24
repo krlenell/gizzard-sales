@@ -34,7 +34,7 @@ export default class ProductList extends React.Component {
 
   render() {
     const productItems = this.state.products.map(product => (
-      <div className="col-4" key={product.productId}>
+      <div className="col-md-6 col-lg-4" key={product.productId}>
         <ProductListItem getDisplay={this.getDisplay} product={product}/>
       </div>
     ));
