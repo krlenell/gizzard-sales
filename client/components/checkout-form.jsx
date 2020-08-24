@@ -51,6 +51,10 @@ export default class CheckoutForm extends React.Component {
 
     return (
       <div className="mt-4 d-flex flex-column justify-content-between">
+        <div className="alert alert-danger" role="alert">
+          Do not use your personal information here.  Remember, this is a demo
+          app and you are not buying anything.
+        </div>
         <h1 >My Cart</h1>
         <h6 className="text-muted">
           {`Order Total: ${this.parsePrice(this.props.totalPrice)}`}
