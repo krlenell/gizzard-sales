@@ -4,6 +4,7 @@ import ProductList from './product-list.jsx';
 import ProductDetails from './product-details.jsx';
 import CartSummary from './cart-summary.jsx';
 import CheckoutForm from './checkout-form.jsx';
+import Modal from './modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -122,6 +123,7 @@ export default class App extends React.Component {
     }
     return (
       <>
+        <Modal/>
         <Header setView={this.setView} cartCount={cartCount}/>
         <div className="container">
           {view}
