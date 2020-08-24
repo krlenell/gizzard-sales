@@ -13,13 +13,15 @@ export default class App extends React.Component {
     this.addToCart = this.addToCart.bind(this);
     this.placeOrder = this.placeOrder.bind(this);
     this.getTotalPrice = this.getTotalPrice.bind(this);
+    this.clearPopUp = this.clearPopUp.bind(this);
     this.state = {
       view: {
         name: 'catalog',
         params: {}
       },
       cart: [],
-      totalPrice: 0
+      totalPrice: 0,
+      viewPopup: true
     };
   }
 
@@ -56,6 +58,15 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
+    const visited = localStorage.alreadyVisited;
+    if (visited) {
+      this.setState({ viewPopup: false });
+    }
+  }
+
+  clearPopUp() {
+    localStorage.alreadyVisited = true;
+    this.setState({ viewPopup: false });
   }
 
   addToCart(product) {
@@ -97,6 +108,11 @@ export default class App extends React.Component {
 
   render() {
     const cartCount = this.state.cart.length;
+    let modal = null;
+    if (this.state.viewPopup) {
+      modal = <Modal clear={this.clearPopUp}/>;
+    }
+
     let view;
 
     if (this.state.view.name === 'details') {
@@ -123,7 +139,7 @@ export default class App extends React.Component {
     }
     return (
       <>
-        <Modal/>
+        {modal}
         <Header setView={this.setView} cartCount={cartCount}/>
         <div className="container">
           {view}
