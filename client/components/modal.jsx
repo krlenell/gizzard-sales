@@ -38,7 +38,7 @@ export default class Modal extends React.Component {
           <div className="card-body">
             <h1 className="card-title">Please Read:</h1>
             <p>This app is for demo purposes only and no real purchases can be made.
-            These prices are all memes, so you&#39;d be getting ripped off if you actaully bought anything here.
+            These prices are all memes, so you&#39;d be getting ripped off if you actually bought anything here.
             <br /><br /> <em>Please click the button below if you understand and wish to view this page:</em>
             </p>
             <button onClick={this.handleClick} id="understand" className="btn btn-primary">I understand</button>
