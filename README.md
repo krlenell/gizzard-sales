@@ -2,6 +2,10 @@ gizzard-sales
 ========
 A full stack Node.js and React shopping cart app.
 
+Live Demo
+-------
+[gizzard-sales.krlenell.com](gizzard-sales.krlenell.com)
+
 
 Technologies Used
 -------
