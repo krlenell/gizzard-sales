@@ -33,6 +33,12 @@ export default class ProductList extends React.Component {
   }
 
   render() {
+    const products = this.state.products;
+    if (products.lenght === 0) {
+      return (
+        <h3>No Products to Display</h3>
+      );
+    }
     const productItems = this.state.products.map(product => (
       <div className="col-md-6 col-lg-4" key={product.productId}>
         <ProductListItem getDisplay={this.getDisplay} product={product}/>
