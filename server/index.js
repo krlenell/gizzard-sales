@@ -27,7 +27,7 @@ app.get('/api/products', (req, res, next) => {
   "image",
   "shortDescription"
   from "products"
-  `;
+  order by "productId" DESC`;
   db.query(sql)
     .then(result => res.json(result.rows))
     .catch(err => next(err));
