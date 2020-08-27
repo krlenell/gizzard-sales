@@ -34,7 +34,7 @@ export default class ProductList extends React.Component {
 
   render() {
     const products = this.state.products;
-    if (products.lenght === 0) {
+    if (products.length === 0) {
       return (
         <h3>No Products to Display</h3>
       );
@@ -51,5 +51,6 @@ export default class ProductList extends React.Component {
         </div>
       </div>
     );
+
   }
 }
