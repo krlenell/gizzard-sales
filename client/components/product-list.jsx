@@ -6,7 +6,8 @@ export default class ProductList extends React.Component {
     super(props);
     this.getDisplay = this.getDisplay.bind(this);
     this.state = {
-      products: []
+      products: [],
+      loaded: false
     };
   }
 
@@ -19,7 +20,13 @@ export default class ProductList extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          products: data
+          products: data,
+          loaded: true
+        });
+      })
+      .catch(() => {
+        this.setState({
+          loaded: true
         });
       });
   }
@@ -34,9 +41,19 @@ export default class ProductList extends React.Component {
 
   render() {
     const products = this.state.products;
-    if (products.length === 0) {
+    if (this.state.loaded && products.length === 0) {
       return (
         <h3>No Products to Display</h3>
+      );
+    }
+    if (!this.state.loaded) {
+      return (
+        <div className="d-flex m-2">
+          <h3>Loading...</h3>
+          <div className="spinner-border" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
       );
     }
     const productItems = this.state.products.map(product => (
