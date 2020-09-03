@@ -33,7 +33,7 @@ export default class CartSummary extends React.Component {
     let hiddenCart = 'd-none';
     const cart = this.props.cart;
     if (!cart.length) {
-      cartList = <h1>No Items in Cart.</h1>;
+      cartList = <h1 className="ml-3">No Items in Cart.</h1>;
       hiddenCart = 'd-none';
     } else {
       cartList = cart.map(cartItem => {
