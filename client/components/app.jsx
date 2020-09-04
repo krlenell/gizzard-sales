@@ -5,6 +5,7 @@ import ProductDetails from './product-details.jsx';
 import CartSummary from './cart-summary.jsx';
 import CheckoutForm from './checkout-form.jsx';
 import Modal from './modal';
+import OrderConfirmation from './order-confirmation';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class App extends React.Component {
     this.placeOrder = this.placeOrder.bind(this);
     this.getTotalPrice = this.getTotalPrice.bind(this);
     this.clearPopUp = this.clearPopUp.bind(this);
+    this.clearConfirmation = this.clearConfirmation.bind(this);
     this.state = {
       view: {
         name: 'catalog',
@@ -21,7 +23,8 @@ export default class App extends React.Component {
       },
       cart: [],
       totalPrice: 0,
-      viewPopup: true
+      viewPopup: true,
+      orderConfirmation: false
     };
   }
 
@@ -69,6 +72,10 @@ export default class App extends React.Component {
     this.setState({ viewPopup: false });
   }
 
+  clearConfirmation() {
+    this.setState({ orderConfirmation: false });
+  }
+
   addToCart(product) {
     const cart = this.state.cart.concat();
     fetch('/api/cart/', {
@@ -101,7 +108,8 @@ export default class App extends React.Component {
           view: {
             name: 'catalog',
             params: {}
-          }
+          },
+          orderConfirmation: true
         });
       });
   }
@@ -114,7 +122,9 @@ export default class App extends React.Component {
     }
 
     let view;
-
+    if (this.state.orderConfirmation) {
+      modal = <OrderConfirmation clearConfirmation={this.clearConfirmation}/>;
+    }
     if (this.state.view.name === 'details') {
       view = <ProductDetails
         addToCart={this.addToCart}
