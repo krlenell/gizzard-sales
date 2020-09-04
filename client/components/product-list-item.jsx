@@ -20,24 +20,26 @@ export default class ProductListItem extends React.Component {
 
   render() {
     return (
-      <div
-        className="card boot-card c-pointer m-2"
-        style={{ minHeight: '30vh' }}
-        onClick={this.handleClick}
-      >
-        <img
-          className="card-img-top fluid-img"
-          style={{ objectFit: 'contain' }}
-          src={this.props.product.image}
-          height="200px"
-          alt="ostrichPillow"
-        />
-        <div className="card-body">
-          <h5 className="card-title">{this.props.product.name}</h5>
-          <p className="card-text">
-            {this.parsePrice(this.props.product.price)}
-          </p>
-          <p className="card-text">{this.props.product.shortDescription}</p>
+      <div className="mt-3">
+        <div
+          className="card boot-card item-card c-pointer m-2"
+          style={{ minHeight: '30vh' }}
+          onClick={this.handleClick}
+        >
+          <img
+            className="card-img-top fluid-img"
+            style={{ objectFit: 'contain' }}
+            src={this.props.product.image}
+            height="200px"
+            alt="ostrichPillow"
+          />
+          <div className="card-body">
+            <h5 className="card-title">{this.props.product.name}</h5>
+            <p className="card-text">
+              {this.parsePrice(this.props.product.price)}
+            </p>
+            <p className="card-text">{this.props.product.shortDescription}</p>
+          </div>
         </div>
       </div>
     );
