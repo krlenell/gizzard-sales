@@ -21,10 +21,11 @@ export default class CheckoutForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const { name, creditCard, shippingAddress } = this.state;
     const newOrder = {
-      name: this.state.name,
-      creditCard: parseInt(this.state.creditCard, 10),
-      shippingAddress: this.state.shippingAddress
+      name: name || 'blank',
+      creditCard: parseInt(creditCard, 10) || 1,
+      shippingAddress: shippingAddress || 'blank'
     };
     this.props.placeOrder(newOrder);
     this.setState({
@@ -67,6 +68,7 @@ export default class CheckoutForm extends React.Component {
               className="form-control"
               id="name"
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="form-group">
@@ -76,6 +78,7 @@ export default class CheckoutForm extends React.Component {
               className="form-control"
               id="creditCard"
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="form-group">
@@ -85,6 +88,7 @@ export default class CheckoutForm extends React.Component {
               className="form-control"
               id="shippingAddress"
               onChange={this.handleChange}
+              required
             />
           </div>
           <div className="d-flex justify-content-between">
