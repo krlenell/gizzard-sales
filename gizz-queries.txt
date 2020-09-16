@@ -91,3 +91,50 @@ WHERE "productId" = 11
 UPDATE products
 SET "longDescription" = 'Alluda Majaka;Stressin'';Vegemite;It''s Got Old;Work This Time;ABABCD;Sleepwalker;Hot Wax;Crying;Pipe-Dream;Homeless Man in Adidas;Oddments'
 WHERE "productId" = 12
+
+UPDATE products
+SET "longDescription" = 'I''m in Your Mind;I''m Not in Your Mind;Cellophane;I''m in Your Mind Fuzz;Empty;Hot Water;Am I in Heaven?;Slow Jam 1;Satan Speeds Up;Her and I (Slow Jam 2)'
+WHERE "productId" = 13
+
+UPDATE products
+SET "longDescription" = 'The River;Infinite Rise;God Is in the Rhythm;Lonely Steel Sheet Flyer'
+WHERE "productId" = 14
+
+UPDATE products
+SET "longDescription" = 'Sense;Bone;Dirt;Paper Mâché Dream Balloon;Trapdoor;Cold Cadaver;The Bitter Boogie;N.G.R.I. (Bloodstain);Time = Fate;Time = $$$;Most of What I Like;Paper Mâché'
+WHERE "productId" = 15
+
+UPDATE products
+SET "longDescription" = 'Robot Stop;Big Fig Wasp;Gamma Knife;People-Vultures;Mr. Beat;Evil Death Roll;Invisible Face;Wah Wah;Road Train'
+WHERE "productId" = 16
+
+UPDATE products
+SET "longDescription" = 'A New World;Altered Beast I;Alter Me I;Altered Beast II;Alter Me II;Altered Beast III;Alter Me III;Altered Beast IV;Life/Death;Some Context;The Reticent Raconteur;The Lord of Lightning;The Balrog;The Floating Fire;The Acrid Corpse;Welcome to an Altered Future;Digital Black;Han-Tyumi, the Confused Cyborg;Soy-Protein Munt Machine;Vomit Coffin;Murder of the Universe'
+WHERE "productId" = 18
+
+UPDATE products
+SET "longDescription" = 'Rattlesnake;Melting;Open Water;Sleep Drifter;Billabong Valley;Anoxia;Doom City;Nuclear Fusion;Flying Microtonal Banana'
+WHERE "productId" = 17
+
+UPDATE products
+SET "longDescription" = 'Sketches of Brunswick East I;Countdown;D-Day;Tezeta;Cranes, Planes, Migraines;The Spider and Me;Sketches of Brunswick East II;Dusk to Dawn on Lygon Street;The Book;A Journey to (S)hell;Rolling Stoned;You Can Be Your Silhouette;Sketches of Brunswick East III'
+WHERE "productId" = 19
+
+UPDATE products
+SET "longDescription" = 'Crumbling Castle;Polygondwanaland;The Castle in the Air;Deserted Dunes Welcome Weary Feet;Inner Cell;Loyalty;Horology;Tetrachromacy;Searching...;The Fourth Colour'
+WHERE "productId" = 20
+
+
+
+UPDATE products
+SET "longDescription" = 'Beginner''s Luck;Greenhouse Heat Death;Barefoot Desert;Muddy Water;SuperpositionWalker	;Down the Sink;The Great Chain of Being;The Last Oasis;All Is Known;I''m Sleepin'' In;The Wheel'
+WHERE "productId" = 21
+
+
+UPDATE products
+SET "longDescription" = 'Fishing for Fishies;Boogieman Sam;The Bird Song;Plastic Boogie;The Cruel Millennial;Real''s Not Real;This Thing;Acarine;Cyboogie'
+WHERE "productId" = 22
+
+UPDATE products
+SET "longDescription" = 'Planet B;Mars for the Rich;Organ Farmer;Superbug;Venusian 1;Perihelion;Venusian 2;Self-Immolate;Hell'
+WHERE "productId" = 23
