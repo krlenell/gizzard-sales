@@ -80,7 +80,7 @@ export default class ProductDetails extends React.Component {
         <div className="m-2">
           <h6 className="card-title">Tracklist</h6>
           <div className="card-text">
-            <ol>
+            <ol className="p-3">
               {tracklist}
             </ol>
           </div>
