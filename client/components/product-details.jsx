@@ -42,18 +42,14 @@ export default class ProductDetails extends React.Component {
     }
   }
 
-  parseParagraphs(string) {
-    const words = string.split('\\n');
-    const paragraphs = words.map((paragraph, index) => {
-      return <p key={index}>{paragraph}</p>;
-    });
-    return paragraphs;
-  }
-
   render() {
     if (!this.state.product) {
       return null;
     }
+    const splitDescription = this.state.product.longDescription.split(';');
+    const tracklist = splitDescription.map((track, trackNumber) => {
+      return <li key={trackNumber}>{track}</li>;
+    });
     return (
       <div className="card mt-2 m-lg-5" onClick={this.handleClick}>
         <p id="details-back" className="c-pointer text-muted m-2">
@@ -82,9 +78,12 @@ export default class ProductDetails extends React.Component {
           </div>
         </div>
         <div className="m-2">
-          <h6 className="card-title">More Info:</h6>
+          <h6 className="card-title">Tracklist</h6>
           <div className="card-text">
-            {this.parseParagraphs(this.state.product.longDescription)}
+            <ol>
+              {tracklist}
+            </ol>
+
           </div>
         </div>
       </div>
