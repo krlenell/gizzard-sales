@@ -51,7 +51,7 @@ export default class CheckoutForm extends React.Component {
   render() {
 
     return (
-      <div className="mt-4 d-flex flex-column justify-content-between">
+      <div className="mt-4 d-flex flex-column justify-content-between mb-2">
         <div className="alert alert-danger" role="alert">
           Do not use your personal information here.  Remember, this is a demo
           app and you are not buying anything.
