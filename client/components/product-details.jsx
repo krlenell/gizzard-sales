@@ -83,7 +83,6 @@ export default class ProductDetails extends React.Component {
             <ol>
               {tracklist}
             </ol>
-
           </div>
         </div>
       </div>

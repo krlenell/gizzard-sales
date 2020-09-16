@@ -79,3 +79,15 @@ values ('12 Bar Bruise',
 UPDATE products
 SET "longDescription" = 'Elbow;Muckracker;Nein;12 Bar Bruise;Garage Liddiard;Sam Cherry''s Last Shot;High Hopes Low;Cut Throat Boogie;Bloody Ripper;Uh Oh, I Called Mum;Sea of Trees;Footy Footy'
 WHERE "productId" = 9
+
+UPDATE products
+SET "longDescription" = 'Eyes Like the Sky;Year of Our Lord;The Raid;Drum Run;Evil Man;Fort Whipple;The God Mans Goat Lust;The Killing Ground;Dust in the Wind;Guns & Horses'
+WHERE "productId" = 10
+
+UPDATE products
+SET "longDescription" = 'Head On/Pill;I Am Not a Man Unless I Have a Woman;God Is Calling Me Back Home;30 Past 7;Let Me Mend the Past;Mystery Jack;Pop in My Step;Float Along – Fill Your Lungs'
+WHERE "productId" = 11
+
+UPDATE products
+SET "longDescription" = 'Alluda Majaka;Stressin'';Vegemite;It''s Got Old;Work This Time;ABABCD;Sleepwalker;Hot Wax;Crying;Pipe-Dream;Homeless Man in Adidas;Oddments'
+WHERE "productId" = 12
