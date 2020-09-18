@@ -61,14 +61,14 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.getCartItems();
-    const visited = localStorage.alreadyVisited;
+    const visited = sessionStorage.alreadyVisited;
     if (visited) {
       this.setState({ viewPopup: false });
     }
   }
 
   clearPopUp() {
-    localStorage.alreadyVisited = true;
+    sessionStorage.alreadyVisited = true;
     this.setState({ viewPopup: false });
   }
 
